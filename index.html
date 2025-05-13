@@ -23,8 +23,8 @@
     }
     .heart {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 50px;
+      height: 50px;
       background: red;
       transform: rotate(45deg);
       animation: float 5s linear;
@@ -34,17 +34,17 @@
     .heart::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 50px;
+      height: 50px;
       background: red;
       border-radius: 50%;
     }
     .heart::before {
-      top: -10px;
+      top: -25px;
       left: 0;
     }
     .heart::after {
-      left: -10px;
+      left: -25px;
       top: 0;
     }
     @keyframes float {
@@ -81,14 +81,16 @@
   <script>
     function createHearts() {
       for (let i = 0; i < 20; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.style.left = Math.random() * window.innerWidth + "px";
-        heart.style.bottom = "0px";
-        heart.style.width = "20px";
-        heart.style.height = "20px";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 5000);
+        setTimeout(() => {
+          const heart = document.createElement("div");
+          heart.className = "heart";
+          heart.style.left = Math.random() * window.innerWidth + "px";
+          heart.style.bottom = "0px";
+          heart.style.width = "50px";
+          heart.style.height = "50px";
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 5000);
+        }, i * 150); // jeda antar heart supaya tidak numpuk
       }
     }
 
