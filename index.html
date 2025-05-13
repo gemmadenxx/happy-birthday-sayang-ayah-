@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ulang Tahun Miwa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1, h2, h3 {
+      color: #d63384;
+      margin: 15px;
+    }
+    img {
+      width: 60%;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 5s linear;
+      opacity: 0.8;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-600px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+    .content {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Selamat Ulang Tahun, Miwa!</h1>
+  <img src="miwa.jpg" alt="Foto Miwa">
+  <h2>Ayah sayang Miwa selalu.</h2>
+  
+  <div class="content">
+    <h3>Miwa, semoga tahun ini membawa kebahagiaan dan cinta tanpa batas.</h3>
+    <h3>Ayah akan selalu mendukungmu, apapun yang terjadi.</h3>
+    <h3>Selamat ulang tahun, Miwa sayang. Ayah bangga padamu.</h3>
+
+    <h3>Miwa, setiap detik yang Ayah habiskan bersamamu adalah momen berharga yang tak ternilai harganya. Teruslah menjadi pribadi yang penuh semangat dan kebaikan, karena dunia butuh lebih banyak orang seperti kamu yang mampu memberi kebahagiaan kepada orang lain.</h3>
+
+    <h3>Semoga di hari ulang tahunmu ini, kamu selalu diberikan kekuatan untuk menghadapi setiap tantangan hidup. Ayah yakin kamu akan terus tumbuh menjadi pribadi yang lebih luar biasa dan mencapai semua impian yang kamu impikan, karena kamu adalah kebanggaan Ayah yang tiada duanya.</h3>
+  </div>
+
+  <script>
+    function createHearts() {
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.bottom = "0px";
+        heart.style.width = "20px";
+        heart.style.height = "20px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+      }
+    }
+
+    setInterval(createHearts, 3000);
+  </script>
+
+</body>
+</html>
